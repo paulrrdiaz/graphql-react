@@ -12,6 +12,7 @@ import {
   getUsersFromCompany,
   addUser,
   deleteUser,
+  editUser,
 } from '../api'
 
 const CompanyType = new GraphQLObjectType({
@@ -94,14 +95,14 @@ const mutation = new GraphQLObjectType({
     editUser: {
       type: UserType,
       args: {
-        id: { type: GraphQLString },
+        id: { type: new GraphQLNonNull(GraphQLString) },
         firstName: { type: GraphQLString },
         age: { type: GraphQLInt },
         companyId: { type: GraphQLString },
       },
       resolve(parentValue, args) {
         const { id, ...body } = args
-        return editUser(id, { body })
+        return editUser(id, body)
       },
     },
   },
