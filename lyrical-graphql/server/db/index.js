@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import 'server/models'
 
 const { MONGO_URI } = process.env
 

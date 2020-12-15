@@ -1,0 +1,2 @@
+import './lyric'
+import './song'
