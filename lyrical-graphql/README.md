@@ -1,0 +1,1 @@
+- Run `cp example.env .env`.
