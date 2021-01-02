@@ -4,8 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon --require dotenv/config --exec babel-node server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "next:dev": "next dev",
+    "start:server": "nodemon --require dotenv/config --exec babel-node server",
+    "start:client": "npm run next:dev --prefix ./client",
+    "start": "npm-run-all --parallel start:*"
   },
   "babel": {
     "presets": [
@@ -29,6 +31,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@apollo/react-hooks": "^4.0.0",
+    "apollo-boost": "^0.4.9",
     "axios": "^0.21.0",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
@@ -37,6 +41,7 @@
     "lodash": "^4.17.20",
     "mongoose": "^5.11.7",
     "next": "^10.0.3",
+    "next-with-apollo": "^5.1.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
