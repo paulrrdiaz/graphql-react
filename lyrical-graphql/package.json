@@ -4,55 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "next:dev": "next dev",
-    "start:server": "nodemon --require dotenv/config --exec babel-node server",
-    "start:client": "npm run next:dev --prefix ./client",
+    "start:server": "npm start --prefix ./server",
+    "start:client": "npm run dev --prefix ./client",
     "start": "npm-run-all --parallel start:*"
-  },
-  "babel": {
-    "presets": [
-      "@babel/env"
-    ],
-    "plugins": [
-      [
-        "module-resolver",
-        {
-          "root": [
-            "."
-          ],
-          "alias": {
-            "server": "./server"
-          }
-        }
-      ]
-    ]
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "@apollo/react-hooks": "^4.0.0",
-    "apollo-boost": "^0.4.9",
-    "axios": "^0.21.0",
-    "body-parser": "^1.19.0",
-    "express": "^4.17.1",
-    "express-graphql": "^0.12.0",
-    "graphql": "^15.4.0",
-    "lodash": "^4.17.20",
-    "mongoose": "^5.11.7",
-    "next": "^10.0.3",
-    "next-with-apollo": "^5.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1"
-  },
   "devDependencies": {
-    "@babel/cli": "^7.12.10",
-    "@babel/core": "^7.12.10",
-    "@babel/node": "^7.12.10",
-    "@babel/preset-env": "^7.12.10",
-    "babel-plugin-module-resolver": "^4.0.0",
-    "dotenv": "^8.2.0",
-    "nodemon": "^2.0.6",
     "npm-run-all": "^4.1.5"
   }
 }

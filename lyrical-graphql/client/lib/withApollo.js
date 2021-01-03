@@ -2,7 +2,7 @@ import withApollo from 'next-with-apollo'
 import ApolloClient, { InMemoryCache } from 'apollo-boost'
 import { ApolloProvider } from '@apollo/react-hooks'
 
-const { SERVER_ENDPOINT } = process.env
+const { SERVER_ENDPOINT = 'http://localhost:4000' } = process.env
 
 export default withApollo(
   ({ initialState }) => {
