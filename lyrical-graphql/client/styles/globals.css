@@ -27,5 +27,5 @@
 }
 
 .lyric {
-  @apply bg-green-200 rounded-md py-1 px-2 border border-green-500 text-green-500 mb-2;
+  @apply bg-green-100 rounded-md py-2 px-3 border border-green-500 text-green-500 mb-2;
 }

@@ -17,5 +17,6 @@ export default withApollo(({ initialState }) => {
   return new ApolloClient({
     uri: `${SERVER_ENDPOINT}/graphql`,
     cache: new InMemoryCache().restore(initialState || {}),
+    dataIdFromObject: (o) => o.id,
   })
 })(App)

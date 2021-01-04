@@ -3,6 +3,7 @@ import { useRouter } from 'next/router'
 import { IoIosArrowBack } from 'react-icons/io'
 import { useQuery } from '@apollo/react-hooks'
 import { fetchSong } from 'queries'
+import LyricList from 'components/LyricList'
 import LyricCreate from 'components/LyricCreate'
 
 const SongsDetail = () => {
@@ -33,14 +34,8 @@ const SongsDetail = () => {
       <div>
         <h3 className="subtitle">{data.song.title}</h3>
       </div>
-      <div className="mb-8">
-        {data.song.lyrics.map(({ content }) => (
-          <p className="lyric" key={content}>
-            {content}
-          </p>
-        ))}
-      </div>
-      <LyricCreate songId={id} />
+      <LyricList lyrics={data.song.lyrics} />
+      <LyricCreate songId={data.song.id} />
     </div>
   )
 }
